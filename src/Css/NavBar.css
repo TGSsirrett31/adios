@@ -1,0 +1,112 @@
+ .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(3, 11, 4, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dot {
+    color: #00ff00;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links button {
+    background: none;
+    border: none;
+    color: #ccc;
+    padding: 6px 10px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links button:hover,
+.nav-links button.active {
+    color: #00ff00;
+    border-bottom: 2px solid #00ff00;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        padding: 12px 15px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links button {
+        margin: 10px 0;
+        border-bottom: none !important;
+    }
+
+    .nav-links button:hover,
+    .nav-links button.active {
+        border-bottom: 2px solid #00ff00 !important;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.4em;
+    }
+}
